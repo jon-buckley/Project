@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Heading, IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react';
+import { Box, IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import { Logo } from './Logo';
 
 export const Header: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = useColorModeValue('white', 'gray.800');
-  const textColor = useColorModeValue('gray.800', 'white');
 
   return (
     <Box
@@ -20,9 +20,7 @@ export const Header: React.FC = () => {
       top={0}
       zIndex={10}
     >
-      <Heading size="lg" color={textColor}>
-        Crypto Monitor
-      </Heading>
+      <Logo />
       <IconButton
         aria-label="Toggle color mode"
         icon={colorMode === 'light' ? <FaMoon /> : <FaSun />}
